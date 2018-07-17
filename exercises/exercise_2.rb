@@ -11,4 +11,4 @@ puts "----------"
 
 @store1.update(name: "Buuuuurnaby")
 
-p @store1
+
