@@ -10,8 +10,8 @@ puts "----------"
 
 # Your code goes here ...
 
-@store1.employees.create(first_name: "Theresa", last_name: "Campbell", hourly_rate: 30)
-@store1.employees.create(first_name: "Katie", last_name: "Mooney", hourly_rate: 30)
+@store1.employees.create(last_name: "Campbell", hourly_rate: 30)
+@store1.employees.create(first_name: "Katie", last_name: "Mooney", hourly_rate: 45)
 @store1.employees.create(first_name: "Jenna", last_name: "Madalena", hourly_rate: 27)
 @store1.employees.create(first_name: "Nicole", last_name: "Forget", hourly_rate: 25)
 @store1.employees.create(first_name: "David", last_name: "Fan", hourly_rate: 14)
@@ -21,4 +21,5 @@ puts "----------"
 @store2.employees.create(first_name: "Zachary", last_name: "Tennent", hourly_rate: 20)
 @store2.employees.create(first_name: "Alexa", last_name: "Jones", hourly_rate: 35)
 
-p @store2.employees
+p Employee.count
+p "Store count: #{Store.count}"
