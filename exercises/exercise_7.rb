@@ -16,8 +16,10 @@ puts "----------"
 puts @ask_for_new_store
 @new_store_name = gets.chomp
 
-@new_store = Store.create(name: @new_store_name)
+@new_store = Store.create(name: @new_store_name, mens_apparel: false, womens_apparel: false)
 
 p @new_store.errors[:name]
 p @new_store.errors[:annual_revenue]
+p @new_store.errors[:mens_apparel]
+p @new_store.errors[:womens_apparel]
 
