@@ -1,0 +1,248 @@
+\q
+CREATE DATABASE test_db;
+\c test_db;
+CREATE TABLE famour_people (
+id BIGSERIAL PRIMARY KEY,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+birthday DATE
+);
+INSERT INTO famous_people (first_name, last_name, birthdate)
+VALUES ('Abraham', 'Lincoln', '1809-02-12');
+ALTER TABLE famour_people
+RENAME TO famous_people;
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Abraham', 'Lincoln', '1809-02-12');
+ALTER TABLE famous_people
+RENAME COLUMN birthday TO birthdate;
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Abraham', 'Lincoln', '1809-02-12');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Mahatma', 'Gandhi', '1869-10-02');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Rudd', '1969-04-06');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Giamatti', '1967-06-06');
+famous_people
+SELECT * FROM famous_people
+;
+SELECT * FROM famous_people;
+SELECT * FROM famous_people WHERE birthdate >= '1920-01-01';
+SELECT * FROM famous_people WHERE birthdate < '1920-01-01';
+\q
+\l
+CREATE DATABASE navy_schema
+;
+\l
+\c navy_schema;
+DROP TABLE IF EXISTS fleet CASCADE;
+DROP TABLE IF EXISTS ship CASCADE;
+DROP TABLE IF EXISTS sailor CASCADE;
+DROP TABLE IF EXISTS rank CASCADE;
+DROP TABLE IF EXISTS assignment CASCADE;
+CREATE TABLE fleet (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50) NOT NULL
+);
+CREATE TABLE ship (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  date_built DATE,
+  fleet_id INTEGER REFERENCES fleet(id)
+);
+CREATE TABLE sailor (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  dob DATE
+);
+CREATE TABLE rank (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50) NOT NULL
+);
+CREATE TABLE assignment (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  start_date DATE,
+  end_date DATE,
+  rank_id INTEGER REFERENCES rank(id),
+  sailor_id INTEGER REFERENCES sailor(id),
+  ship_id INTEGER REFERENCES ship(id)
+);
+\d
+\d assignment;
+\q
+\q
+\d
+\q
+\c test_db;
+\d
+RENAME famour_people_id_seq TO famous_people_id_seq
+\s
+\d
+ RENAME famour_people_id_seq TO famous_people_id_seq;
+\d
+RENAME famour_people_id_seq TO famous_people_id_seq
+;
+RENAME famour_people_id_seq TO famous_people_id_seq;
+RENAME "famour_people_id_seq" TO "famous_people_id_seq";
+rename famour_people_id_seq to famous_people_id_seq;
+ALTER SEQUENCE famour_people_id_seq RENAME TO famous_people_id_seq;
+\d
+\q
+\d
+\c test_db
+\d
+\l
+\d famous_people
+\d famous_people
+ALTER INDEX [ IF EXISTS ] famour_people_pkey RENAME TO famous_people_pkey;
+ALTER INDEX famour_people_pkey RENAME TO famous_people_pkey;
+\d famous_people;
+\d famous_people;
+SELECT * FROM famous_people
+;
+\q
+create database my_db;
+\q
+\d milestones
+\c famous_people;
+\c test_db;
+\d milestones
+\q
+\c test_db;
+\d milestones;
+\dt *.*
+\q
+\d milestones
+\c test_db
+\d milestones
+\d
+knex.schema.dropTable(users);
+knex.schema.dropTable('users');
+knex migrate:latest;
+\c test_db
+\dt
+table knex_migrations
+;
+delete from knex_migrations 
+;
+table knex_migrations
+;
+\d milestones
+\c test_db
+\d milestones 
+knex help
+\q
+\c test_db
+\d
+table knex_migrations
+;
+\c test_db 
+\d
+table knex_migrations
+;
+table milestones
+;
+\d milestones
+;
+\d milestones;
+\c test_db
+\d milestones
+\d milestones
+\c test_db 
+\d milestones
+\dt
+table milestones
+;
+\d milestones
+;
+\d milestones
+\c test_db
+\dt
+\d milestones
+\dt
+\c test_db
+\dt
+table milestones
+;
+\d milestones
+\c test_db
+\d milestones
+\c test_db
+\d milestones
+/l
+psql -U vagrant -d template1
+CREATE ROLE labber WITH LOGIN password 'labber';
+/l
+psql -U vagrant -d template1
+CREATE ROLE labber WITH LOGIN password 'labber';
+\q
+psql -U vagrant -d template1
+CREATE ROLE labber WITH LOGIN password 'labber';
+/q
+\q
+CREATE ROLE labber WITH LOGIN password 'labber';
+CREATE DATABASE midterm OWNER labber;
+\q
+\l
+\c midterm
+\d
+\q
+\c midterm
+\d
+\q
+\maps
+\d maps
+select * from maps
+;
+\q
+\c midterm
+table markers;
+\q
+select * from maps
+;
+\q
+\d
+\d users
+\d favorites
+\d users
+table users
+users table
+\dt users
+SELECT * FROM users
+;
+\d users;
+\dt users;
+SELECT * FROM users;
+SELECT * FROM favorites
+;
+\q
+SELECT * FROM favorites
+;
+\q
+select * from markers
+;
+\q
+select * from users
+;
+\q
+create database ar_exercises;
+ls
+tables
+\q
+tables
+stores
+help
+tables;
+"help"
+help;
+"help";
+\dt
+\q
+\dt
+\q
+\dt
+\l
+\c ar_exercises 
+\dt
+\s stores
